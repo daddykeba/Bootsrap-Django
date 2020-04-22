@@ -1,0 +1,7 @@
+    {% extends "frist_app/base.html" %}
+    {% block body_block %}
+		<h1>Welcome to relative URL</h1>
+		<a href="{% url 'frist_app:other' %}">The other page</a><br/>
+		<a href="{% url 'admin:index' %}">LINK TO ADMIN</a><br/>
+		<a href="{% url 'index' %}">LINK TO Index</a>
+	{% endblock%}

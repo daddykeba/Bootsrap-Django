@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
+	<title>Template base</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light bg-dark ">
+		<a class="navbar-brand" href="#"><i class="fas fa-chid text-warning fa-2x"></i>LOGO</a>
+
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav"><span class="navbar-toggler-icon bg-light"></span></button>
+		<div class="collapse navbar-collapse justify-content-between" id="nav">
+			<ul class="navbar-nav">
+				<!-- px-3 = padding right and left -->
+				<li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">Brand</a></li>
+				<li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#skills">Admin</a></li>
+				<li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'frist_app:relative' %}">Relatives</a></li>
+				<li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#contact">Contact</a></li>
+			</ul>
+			<form class="form-inline">
+				<div class="input-group">
+					<input type="text" placeholder="search" class="form-control">
+					<div class="input-group-append">
+						<button type="button"><i class="fa fa-search text-muted"></i></button>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</nav>
+
+	<div slass="container">
+		{% block body_block %}
+
+		{% endblock%}
+	</div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
